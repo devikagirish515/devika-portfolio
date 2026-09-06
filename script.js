@@ -3,7 +3,13 @@ function openVideo() {
 }
 
 function closeVideo() {
-    document.getElementById("videoPopup").style.display = "none";
+    const popup = document.getElementById("videoPopup");
+    const video = popup.querySelector("video");
+
+    video.pause();
+    video.currentTime = 0;
+
+    popup.style.display = "none";
 }
 
 window.onclick = function(event) {
